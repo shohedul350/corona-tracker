@@ -18,7 +18,7 @@ import Axios from 'axios';
             .then(res=>{
                   const countries = Object.values(res.data.countries)
                const countrylist= countries.map((country=>country.name))
-               console.log(countrylist)
+          
                  setCountries(countrylist)
             })  
             .catch(err=>{
