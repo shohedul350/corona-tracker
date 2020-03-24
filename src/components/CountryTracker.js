@@ -16,8 +16,10 @@ import Axios from 'axios';
     useEffect(() =>  {
            Axios.get('https://covid19.mathdro.id/api/countries')
             .then(res=>{
-                const countries = Object.keys(res.data.countries)
-                setCountries(countries)
+                  const countries = Object.values(res.data.countries)
+               const countrylist= countries.map((country=>country.name))
+               console.log(countrylist)
+                 setCountries(countrylist)
             })  
             .catch(err=>{
                 console.log(err)})
